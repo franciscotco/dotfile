@@ -542,15 +542,15 @@ type = internal/date
 interval = 1.0
 
 ;time =  %I:%M %p
-time = %I:%M %p
+time = DAY %I:%M %p
 ;time-alt =  %d/%m/%Y%
-time-alt = %d/%m/%Y%
+time-alt = DATE %d/%m/%Y%
 
 format = <label>
 format-background = ${color.accent}
 format-foreground = ${color.text}
 format-padding = 1
-label = CAL %time%
+label = %time%
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
