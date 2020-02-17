@@ -1,0 +1,635 @@
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;;
+;;	    ____        __      __              
+;;	   / __ \____  / /_  __/ /_  ____ ______
+;;	  / /_/ / __ \/ / / / / __ \/ __ `/ ___/
+;;	 / ____/ /_/ / / /_/ / /_/ / /_/ / /    
+;;	/_/    \____/_/\__, /_.___/\__,_/_/     
+;;	              /____/                    
+;;
+;; Created By Aditya Shakya @adi1090x
+;;
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;; COLORS
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[color]
+
+; Active Shade 
+shade1 = #1B5E20
+shade2 = #2E7D32
+shade3 = #388E3C
+shade4 = #43A047
+shade5 = #4CAF50
+shade6 = #66BB6A
+shade7 = #81C784
+shade8 = #A5D6A7
+
+;; Active Colors
+bground = #1D1F28
+fground = #f7f7f7
+;borderbg = #f7f7f7
+;accent = #43A047
+;accent = ${color.shade2}
+accent = ${color.blue-agnoster}
+light = ${color.shade7}
+modulefg = #f7f7f7
+modulefg-alt = #f7f7f7
+separator = #2E3436
+warn = ${color.orange}
+
+;; Other
+trans = #00000000
+white = #FFFFFF
+black = #000000
+
+;; Material Colors
+red = #e53935
+;pink = #d81b60
+pink = #D700D7
+purple = #8e24aa
+deep-purple = #5e35b1
+indigo = #3949ab
+blue = #1e88e5
+light-blue = #039be5
+cyan = #00acc1
+teal = #00897b
+green = #43a047
+light-green = #7cb342
+lime = #c0ca33
+yellow = #fdd835
+amber = #ffb300
+orange = #fb8c00
+deep-orange = #f4511e
+brown = #6d4c41
+grey = #757575
+blue-gray = #546e7a
+blue-agnoster = #4587CB
+yellow-agnoster = #AB872D
+
+;; Text Colors
+text = #DFF0D8
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;; BAR
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[global/wm]
+
+;margin-bottom = 0
+;margin-top = 0
+
+[bar/main]
+
+monitor =
+monitor-fallback =
+monitor-strict = false
+override-redirect = false
+
+bottom = false
+fixed-center = true
+
+;width = 98%
+;height = 22
+;offset-x = 1%
+;offset-y = 2%
+width = 100%
+height = 21
+offset-x = 0%
+offset-y = 0%
+
+background = ${color.black}
+foreground = ${color.fground}
+
+radius-top = 0.0
+radius-bottom = 0.0
+
+overline-size = 2
+overline-color = ${color.accent}
+
+;border-bottom-size = 2
+;border-color = ${color.borderbg}
+
+padding = 0
+module-margin-left = 0
+module-margin-right = 0
+
+;font-0 = "Misc Termsyn:size=20:weight=bold;2"
+;font-1 = "Wuncon Siji:size=20;2"
+;font-2 = Iosevka Nerd Font:style=Medium:size=20;4
+font-0 = "Iosevka:size=12:weight=bold;3"
+font-1 = "FontAwesome:pixelsize=14;2"
+
+;modules-left = launcher left1 title left2
+;modules-center = workspaces
+modules-left = workspaces
+modules-right = right7 network rightArrowSeparator rightArrowAccent cpu rightArrowSeparator rightArrowAccent temperature rightArrowSeparator rightArrowAccent memory rightArrowSeparator rightArrowAccent alsa rightArrowSeparator rightArrowAccent battery rightArrowSeparator rightArrowAccent date rightArrowSeparator rightArrowAccent
+;powermenu
+separator =
+spacing = 0
+dim-value = 1.0
+wm-name = 
+locale = 
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 16
+;tray-transparent = false
+tray-background = ${color.accent}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-scale = 1.0
+
+enable-ipc = true
+
+[settings]
+
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+
+screenchange-reload = false
+
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+pseudo-transparency = false
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;; MODULES
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/left1]
+type = custom/text
+content-background = ${color.shade2}
+content-foreground = ${color.shade1}
+content = "%{T1}%{T-}"
+
+[module/left2]
+type = custom/text
+content-background = ${color.bground}
+content-foreground = ${color.shade2}
+content = "%{T1}%{T-}"
+
+#+++++++++++++++++++++++++++++++++++++++
+
+[module/rightArrowSeparator]
+type = custom/text
+content-background = ${color.accent}
+content-foreground = ${color.separator}
+content = "%{T1}%{T-}"
+
+[module/rightArrowAccent]
+type = custom/text
+content-background = ${color.separator}
+content-foreground = ${color.accent}
+content = "%{T1}%{T-}"
+
+[module/right1]
+type = custom/text
+content-background = ${color.shade2}
+content-foreground = ${color.shade1}
+content = "%{T1}%{T-}"
+
+[module/right2]
+type = custom/text
+content-background = ${color.shade3}
+content-foreground = ${color.shade2}
+content = "%{T1}%{T-}"
+
+[module/right3]
+type = custom/text
+content-background = ${color.shade4}
+content-foreground = ${color.shade3}
+content = "%{T1}%{T-}"
+
+[module/right4]
+type = custom/text
+content-background = ${color.shade5}
+content-foreground = ${color.shade4}
+content = "%{T1}%{T-}"
+
+[module/right5]
+type = custom/text
+content-background = ${color.shade6}
+content-foreground = ${color.shade5}
+content = "%{T1}%{T-}"
+
+[module/right6]
+type = custom/text
+content-background = ${color.shade7}
+content-foreground = ${color.shade6}
+content = "%{T1}%{T-}"
+
+[module/right7]
+type = custom/text
+content-background = ${color.black}
+content-foreground = ${color.accent}
+content = "%{T1}%{T-}"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/launcher]
+type = custom/text
+content = 
+
+content-background = ${color.shade1}
+content-foreground = ${color.modulefg}
+content-padding = 1
+
+;click-left = dmenu_run -b -l 5 -p Search -fn "Misc Termsyn" -nb "#1D1F28" -nf "#f7f7f7" -sb "#1E88E5" -sf "#202020"
+click-left = rofi -show run -fullscreen True -lines 5 -line-margin 5 -padding 300 -bw 0
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-background = ${color.shade2}
+format-foreground = ${color.modulefg}
+format-padding = 1
+
+label = %title%
+label-maxlen = 30
+
+;;label-empty = Arch Linux
+;;label-empty-foreground = #707880
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;[module/workspaces]
+;type = internal/xworkspaces
+;
+;pin-workspaces = false
+;enable-click = true
+;enable-scroll = false
+;
+;label-active = " %index% A"
+;;content = "%{T1}%{T-}"
+;;label-active = 
+;label-occupied = " %index% B"
+;label-urgent = " %index% C"
+;label-empty = " %index% D"
+;
+;format = <label-state>
+;
+;;label-active = %icon% %name%
+;
+;label-monitor = %name%
+;label-active-foreground = ${color.text}
+;label-occupied-foreground = ${color.accent}
+;label-urgent-foreground = ${color.red}
+;label-empty-foreground = ${color.modulefg-alt}
+;
+;label-active-background = ${color.accent}
+;
+;label-focused-underlie = ${color.red}
+;label-active-underline = ${color.white}
+;
+;label-active-padding = 0
+;label-urgent-padding = 0
+;label-occupied-padding = 0
+;label-empty-padding = 0
+;
+;border-size = 6
+;border-color = ${color.red}
+[module/workspaces]
+type = internal/i3
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+format-padding = 1
+
+ws-icon-0 = "1:main";
+ws-icon-1 = "2:Work #1"❷
+ws-icon-2 = "3:Work #2";❸
+ws-icon-3 = "4:Work #3;❹
+ws-icon-4 = "5:work #4";❺
+ws-icon-5 = "6:Media";❻
+ws-icon-6 = "7:Communication";
+ws-icon-7 = "8:Presentation";❽
+
+ws-icon-default = 1
+
+format = <label-state>
+;format-background = ${color.shade2}
+
+label-focused = %index%
+label-focused-padding = 1
+label-focused-foreground = ${color.text}
+label-focused-background = ${color.accent}
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+label-unfocused-foreground = ${color.accent}
+
+label-visible = %index%
+label-visible-padding = 1
+label-visible-foreground = ${color.accent}
+
+label-urgent = %index%
+label-urgent-padding = 1
+label-urgent-foreground = ${color.warn}
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " CPU"
+format-prefix-foreground = ${color.text}
+format-prefix-background = ${color.accent}
+;content = "%{T1}%{T-}"
+label = %{T1}%percentage%%%{T-}
+label-foreground = ${color.text}
+label-background = ${color.accent}
+label-padding = 1
+
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+;hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
+
+; Whether or not to show units next to the temperature tokens (°C, °F)
+; Default: true
+units = true
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format = <label>
+format-background = ${color.accent}
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = <label-warn>
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label = " TEMP %temperature-c% "
+label-background = ${color.accent}
+label-foreground = ${color.text}
+
+; Available tokens:
+;   %temperature% (deprecated)
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label-warn = " TEMP %temperature-c% "
+label-warn-foreground = ${color.warn}
+label-warn-background = ${color.accent}
+
+; Requires the <ramp> tag
+; The icon selection will range from `base-temperature` to `warn-temperature`,
+; temperatures above `warn-temperature` will use the last icon
+; and temperatures below `base-temperature` will use `ramp-0`
+ramp-0 = A
+ramp-1 = B
+ramp-2 = C
+ramp-foreground = ${color.text}
+ramp-background = ${color.accent}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/memory]
+type = internal/memory
+interval = 2
+;format-prefix = " "
+format-prefix = " RAM"
+format-prefix-foreground = ${color.text}
+format-prefix-background = ${color.accent}
+label = %percentage_used%%
+label-foreground = ${color.text}
+label-background = ${color.accent}
+label-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/alsa]
+type = internal/alsa
+
+;format-volume = <ramp-volume> <label-volume>
+format-volume = <label-volume>
+format-volume-background = ${color.accent}
+format-volume-foreground = ${color.text}
+format-volume-padding = 1
+
+label-volume = VOL %percentage%%
+
+format-muted-prefix = 
+label-muted = "VOL Muted"
+format-muted-background = ${color.accent}
+format-muted-foreground = ${color.text}
+format-muted-padding = 1
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/backlight]
+type = internal/xbacklight
+
+card = intel_backlight
+
+format = <ramp> <label>
+format-background = ${color.shade4}
+format-foreground = ${color.modulefg}
+format-padding = 1
+
+label = %percentage%%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery]
+type = internal/battery
+
+full-at = 100
+battery = BAT0
+adapter = AC
+
+poll-interval = 2
+time-format = %H:%M
+
+;format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
+format-charging-background = ${color.accent}
+format-charging-foreground = ${color.text}
+format-charging-padding = 1
+
+format-discharging = <label-discharging>
+;format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${color.accent}
+format-discharging-foreground = ${color.text}
+format-discharging-padding = 1
+
+;label = BAT
+label-charging = UNK %percentage%%
+label-discharging = BAT %percentage%%
+
+;label-full =  Fully Charged
+label-full = FULL %percentage%%
+label-full-background = ${color.accent}
+label-full-foreground = ${color.text}
+label-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-7 = 
+animation-charging-8 = 
+animation-charging-framerate = 750
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/date]
+type = internal/date
+interval = 1.0
+
+;time =  %I:%M %p
+time = %I:%M %p
+;time-alt =  %d/%m/%Y%
+time-alt = %d/%m/%Y%
+
+format = <label>
+format-background = ${color.accent}
+format-foreground = ${color.text}
+format-padding = 1
+label = CAL %time%
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = shutdown
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = back
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 = shutdown
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = back
+menu-2-1-exec = menu-open-0
+
+format-spacing = 1 
+format-background = ${color.accent}
+format-foreground = ${color.text}
+format-padding = 1
+
+label-open = 
+label-close = 
+label-separator = |
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/network]
+type = internal/network
+interface = wlo1
+
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <label-connected>
+format-connected-background = ${color.accent}
+format-connected-foreground = ${color.text}
+format-connected-padding = 1
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${color.accent}
+format-disconnected-foreground = ${color.text}
+format-disconnected-padding = 1
+
+label-connected = "W: (%signal%% at %essid%) %local_ip%"
+label-disconnected = "W: Not Connected"
+ramp-signal-0 = 0%
+ramp-signal-1 = 20%
+ramp-signal-2 = 40%
+ramp-signal-3 = 60%
+ramp-signal-4 = 80%
+ramp-signal-5 = 100%
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/colors]
+type = custom/text
+content = 
+content-background = ${color.shade2}
+content-foreground = ${color.modulefg}
+content-padding = 1
+
+click-left = ~/.config/polybar/scripts/color-switch.sh &
+click-right = ~/.config/polybar/scripts/type-switch.sh &
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;;	    __________  ______
+;;	   / ____/ __ \/ ____/
+;;	  / __/ / / / / /_    
+;;	 / /___/ /_/ / __/    
+;;	/_____/\____/_/       
+;;
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+; vim:ft=dosini
